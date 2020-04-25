@@ -12,12 +12,8 @@ except mysql.connector.Error as error:
 
 cursor = mydb.cursor()
     
-cursor.execute('SELECT candidate_name FROM candidates')  
-for candidate_name in cursor:  
-  print("{}".format(candidate_name))
-
-    
-cursor.execute('SELECT voter_id FROM voter')  
+	
+cursor.execute('SELECT voter_id FROM voterInfo')  
 for voter_id in cursor:  
   print("{}".format(voter_id))
 
