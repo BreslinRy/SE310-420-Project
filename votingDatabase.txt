@@ -1,18 +1,39 @@
-CREATE TABLE tally(
-	votes_cast VARCHAR(100),
-	voter_id VARCHAR(100),
-	has_voted CHAR(10));
+CREATE TABLE electionSelect(
+	question_ID CHAR(2) PRIMARY KEY,
+	qestion_name VARCHAR(50));
 
-CREATE TABLE candidates(
-	candidate_id VARCHAR(100),
-	candidate_party VARCHAR(100),
+CREATE TABLE secretaryOfState(
+	candidate_id char(2) PRIMARY KEY,
+	candidate_party char(1),
+	candidate_name VARCHAR(100),
+	candidate_descrip LONGTEXT,
+	candidate_tally VARCHAR(100));
+	
+CREATE TABLE attornyGeneral(
+	candidate_id char(2) PRIMARY KEY,
+	candidate_party char(1),
 	candidate_name VARCHAR(100),
 	candidate_descrip LONGTEXT,
 	candidate_tally VARCHAR(100));
 
-CREATE TABLE voter(
-	voter_id VARCHAR(100),
-	has_voted BIT(1),
-	voter_selection_id VARCHAR(100));
+CREATE TABLE stateTreasurer(
+	candidate_id char(2) PRIMARY KEY,
+	candidate_party char(1),
+	candidate_name VARCHAR(100),
+	candidate_descrip LONGTEXT,
+	candidate_tally VARCHAR(100));
+
+CREATE TABLE voterInfo(
+	voter_id VARCHAR(4) PRIMARY KEY,
+	user_name VARCHAR(10),
+	password VARCHAR(20),
+	party CHAR(1));
+
+CREATE TABLE voterSelection(
+	SELECT voter_id FROM voterInfo AS voter_id,
+	has_Voted BIT(1),
+	sec_id CHAR(2),
+	attor_id CHAR(2),
+	state_id CHAR(2));
 
 
