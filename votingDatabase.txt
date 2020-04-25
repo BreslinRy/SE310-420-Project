@@ -30,7 +30,7 @@ CREATE TABLE voterInfo(
 	party CHAR(1));
 
 CREATE TABLE voterSelection(
-	SELECT voter_id FROM voterInfo AS voter_id,
+	voter_id VARCHAR(4) PRIMARY KEY ,
 	has_Voted BIT(1),
 	sec_id CHAR(2),
 	attor_id CHAR(2),
